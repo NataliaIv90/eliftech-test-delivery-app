@@ -1,9 +1,19 @@
+import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 
-export const Header = () => {
-  <header className="Header">
+const StyledHeader = styled('header')({
+  padding: '2%',
+});
+
+const StyledDivider = styled('span')({
+  margin: '0 3%'
+});
+
+
+export const Header = () => (
+  <StyledHeader>
     <Button variant="text">Shop</Button>
-    <span>|</span>
+    <StyledDivider >|</StyledDivider>
     <Button variant="text">Shoping Cart</Button>
-  </header>
-}
+  </StyledHeader>
+)
