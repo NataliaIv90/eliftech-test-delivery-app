@@ -4,7 +4,7 @@ import { StyledCardActions } from './Card.styled';
 
 export const MediaCard = ({ data }) => {
   const { strMealThumb, strMeal } = data;
-  // console.log(data)
+
   return (
     <Card sx={{ height: '360px' }}>
       <CardMedia
@@ -14,15 +14,38 @@ export const MediaCard = ({ data }) => {
         alt={strMeal}
       />
       <CardContent>
-        <Typography title={strMeal} gutterBottom variant="h5" component="h2" sx={{ overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical' }}>
+        <Typography
+          title={strMeal}
+          gutterBottom variant="h5"
+          component="h2"
+          sx={{
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: 1,
+            WebkitBoxOrient: 'vertical'
+          }}>
           {strMeal}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical' }}>
+        <Typography
+          variant="body2"
+          color="text.secondary
+          " sx={{
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: 1,
+            WebkitBoxOrient: 'vertical'
+          }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Typography>
       </CardContent>
       <StyledCardActions>
-        <Button variant="contained" size="small" color="success">Add to Cart</Button>
+        <Button
+          variant="contained"
+          size="small"
+          color="success"
+        >Add to Cart</Button>
       </StyledCardActions>
     </Card>
   );

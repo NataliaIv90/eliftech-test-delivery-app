@@ -3,7 +3,7 @@ import { MediaCard } from './card/Card';
 import { ShopContentWrapper, ShopBtnsConainer, ShopGallery, StyledHeader } from './Shop.styled';
 import { useState, useEffect } from 'react';
 
-const categories = ['Seafood', 'Dessert', 'Pasta', 'Pork', 'Vegan', 'Breakfast']
+const categories = ['Seafood', 'Dessert', 'Pasta', 'Pork', 'Vegan', 'Breakfast'];
 
 export const Shop = () => {
   const [menuData, setMenuData] = useState([]);
@@ -17,6 +17,7 @@ export const Shop = () => {
 
   return (
     <ShopContentWrapper>
+
       <aside>
         <StyledHeader>Shops:</StyledHeader>
         <ShopBtnsConainer>
@@ -29,17 +30,13 @@ export const Shop = () => {
             >{el}</Button>)}
         </ShopBtnsConainer>
       </aside>
+
       <ShopGallery>
         {Array.isArray(menuData) && menuData.length > 0
-          ? menuData.map((el) =>
-            <MediaCard key={el.idMeal} data={el} />)
+          ? menuData.map((el) => <MediaCard key={el.idMeal} data={el} />)
           : null}
-        {/* <MediaCard />
-        <MediaCard />
-        <MediaCard />
-        <MediaCard />
-        <MediaCard /> */}
       </ShopGallery>
+
     </ShopContentWrapper>
   )
 }
