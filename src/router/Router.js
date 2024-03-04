@@ -9,11 +9,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate to='shop' />,
-      },
-      {
-        path: "/shop",
-        element: <Shop />
+        element: <Shop />,
       },
       {
         path: "cart",
