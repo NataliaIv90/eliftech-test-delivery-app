@@ -1,19 +1,20 @@
-import styled from "@emotion/styled";
-import { Button } from "@mui/material";
+import { StyledHeader, StyledDivider, HeaderBtn } from './Header.styled';
 
-const StyledHeader = styled('header')({
-  padding: '2%',
-});
+export const Header = () => {
+  const location = window.location.pathname;
+  console.log(location);
 
-const StyledDivider = styled('span')({
-  margin: '0 3%'
-});
-
-
-export const Header = () => (
-  <StyledHeader>
-    <Button variant="text">Shop</Button>
-    <StyledDivider >|</StyledDivider>
-    <Button variant="text">Shoping Cart</Button>
-  </StyledHeader>
-)
+  return (
+    <StyledHeader>
+      <HeaderBtn
+        underlined={location.includes("shop") ? 1 : 0}
+        variant="text"
+      >Shop</HeaderBtn>
+      <StyledDivider >|</StyledDivider>
+      <HeaderBtn
+        underlined={location.includes("cart") ? 1 : 0}
+        variant="text"
+      >Shoping Cart</HeaderBtn>
+    </StyledHeader>
+  )
+}
