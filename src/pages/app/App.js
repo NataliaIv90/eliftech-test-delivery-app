@@ -1,12 +1,13 @@
-import './App.css';
 import { Header } from '../header/Header';
-import { Shop } from '../shop/Shop';
+import { Outlet } from 'react-router-dom';
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <Header />
-      <Shop />
+      <>
+        <Outlet />
+      </>
     </div>
   );
 }
