@@ -1,6 +1,10 @@
 # eliftech-test-deliveryApp
 
-Web application where users can order food delivery. Create with React
+Web application where users can order *food delivery*. Create with React
+
+**Hosted on Netlify**
+
+[link to App](https://papaya-fairy-00dadf.netlify.app/)
 
 ## UPD 04.03.2024
 + react router
