@@ -2,15 +2,9 @@ import { styled } from "@mui/system";
 
 export const CartWrapper = styled('main')({
   display: 'grid',
+  gridTemplateAreas: "'form cards''footer footer'",
+  padding: '2%',
   gridTemplateColumns: '1fr 1.2fr',
-  padding: '2%'
+  gap: '30px',
+  height: '80vh',
 });
-
-export const DeliveryInfo = styled('div')({
-  width: '100%',
-});
-
-export const ItemsInCart = styled('div')({
-  height: '84vh',
-  overflowY: 'scroll',
-})
