@@ -29,6 +29,12 @@ export const Cards = () => {
     });
   };
 
+  const removeItemFromCart = (key) => {
+    const updatedCart = { ...cart };
+    delete updatedCart[key];
+    setCart(updatedCart);
+  };
+
   if (cartKeys.length === 0) {
     return <CardsWrapper>There are no items in the cart</CardsWrapper>
   }
@@ -40,6 +46,7 @@ export const Cards = () => {
         key={el}
         reduceItemAmount={() => reduceItemsAmount(el)}
         increaseItemAmount={() => increaseItemsAmount(el)}
+        removeItemFromCart={() => removeItemFromCart(el)}
       />)}
     </CardsWrapper>
   )

@@ -8,7 +8,8 @@ export const CardWrapper = styled('div')(({ theme }) => ({
   gridTemplateColumns: '1fr 0.7fr',
   gap: '20px',
   marginBottom: '30px',
-  borderRadius: '10px'
+  borderRadius: '10px',
+  position: 'relative',
 }));
 
 export const ItemImg = styled('img')({
@@ -31,4 +32,13 @@ export const CartCardAmountBtn = styled(Button)({
   borderRadius: '50px',
   minWidth: 'auto',
   margin: '0 20px',
+});
+
+export const DelereItemBtn = styled(Button)({
+  position: 'absolute',
+  top: '7px',
+  right: '7px',
+  minWidth: 'auto',
+  padding: '3px 8px',
+  fontSize: '8px',
 })

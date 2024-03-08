@@ -1,7 +1,7 @@
-import { Typography } from '@mui/material';
-import { CardWrapper, ItemImg, ItemContent, CartCardAmountBtn } from './CartCard.styled';
+import { Button, Typography } from '@mui/material';
+import { CardWrapper, ItemImg, ItemContent, CartCardAmountBtn, DelereItemBtn } from './CartCard.styled';
 
-export const CartCard = ({ data, reduceItemAmount, increaseItemAmount }) => {
+export const CartCard = ({ data, reduceItemAmount, increaseItemAmount, removeItemFromCart }) => {
   const { img, title, amount } = data;
   const price = 5;
   console.log(data);
@@ -20,7 +20,9 @@ export const CartCard = ({ data, reduceItemAmount, increaseItemAmount }) => {
             color='success'
             onClick={reduceItemAmount}
           >-</CartCardAmountBtn>
+
           <span>{amount}</span>
+
           <CartCardAmountBtn
             size='small'
             variant='contained'
@@ -28,6 +30,13 @@ export const CartCard = ({ data, reduceItemAmount, increaseItemAmount }) => {
             onClick={increaseItemAmount}
           >+</CartCardAmountBtn>
         </p>
+
+        <DelereItemBtn
+          variant='contained'
+          size='small'
+          color='error'
+          onClick={removeItemFromCart}
+        >X</DelereItemBtn>
       </ItemContent>
     </CardWrapper>
   )
