@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { Button, styled } from "@mui/material";
 
 export const CardWrapper = styled('div')(({ theme }) => ({
   border: `0.5px solid ${theme.palette.text.dark}55`,
@@ -23,3 +23,12 @@ export const ItemContent = styled('div')({
   textAlign: 'center',
   padding: '20px 5px 5px'
 });
+
+export const CartCardAmountBtn = styled(Button)({
+  padding: '5px',
+  width: '25px',
+  height: '25px',
+  borderRadius: '50px',
+  minWidth: 'auto',
+  margin: '0 20px',
+})
