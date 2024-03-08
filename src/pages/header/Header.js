@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <HeaderBtn
-        underlined={location.includes("shop") ? 1 : 0}
+        underlined={location.includes("cart") ? 0 : 1}
         variant="text"
         onClick={() => navigate('/')}
       >Shop</HeaderBtn>
