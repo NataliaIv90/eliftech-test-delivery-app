@@ -1,9 +1,27 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import { CardContent, CardMedia } from '@mui/material';
 import { StyledCardActions, StyledCardTitle, StyledCardSubtitle, StyledCard, StyledButton } from './Card.styled';
+import { CartContext } from '../../app/App';
 
 export const MediaCard = ({ data }) => {
-  const { strMealThumb, strMeal } = data;
+  const { strMealThumb, strMeal, idMeal } = data;
+  const { cart, setCart } = useContext(CartContext);
+
+  const addToCart = (key, img, title) => {
+    const updatedCart = { ...cart };
+
+    if (updatedCart.hasOwnProperty(key)) {
+      updatedCart[key].amount += 1;
+    } else {
+      updatedCart[key] = {
+        img: img,
+        title: title,
+        amount: 1
+      };
+
+      setCart(updatedCart);
+    }
+  }
 
   return (
     <StyledCard>
@@ -35,6 +53,8 @@ export const MediaCard = ({ data }) => {
           variant="contained"
           size="small"
           color="success"
+          onClick={() => addToCart(idMeal, strMealThumb, strMeal)}
+        // onClick={() => console.log(idMeal)}
         >Add to Cart</StyledButton>
       </StyledCardActions>
     </StyledCard>
