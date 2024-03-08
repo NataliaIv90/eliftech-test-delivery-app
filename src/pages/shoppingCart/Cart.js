@@ -14,7 +14,7 @@ export const Cart = () => {
     }
   );
 
-  const sendOrder = () => alert(JSON.stringify(formValues));
+  const sendOrder = () => alert(`adress: ${JSON.stringify(formValues)}`);
 
   return (
     <CartWrapper>

@@ -5,7 +5,6 @@ import { CartContext } from "../../app/App";
 
 export const CartFooter = ({ sendOrder }) => {
   const { cart } = useContext(CartContext);
-  const keys = Object.keys(cart);
   const price = 5;
   const totalPrice = Object.keys(cart).reduce((acc, key) => {
     const item = cart[key];
@@ -21,7 +20,7 @@ export const CartFooter = ({ sendOrder }) => {
         variant="contained"
         color="success"
         size="small"
-        onClick={sendOrder}
+        onClick={() => sendOrder()}
       >Submit order</Button>
     </CartFooterWrapper>
   );
