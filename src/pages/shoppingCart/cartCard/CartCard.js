@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { CardWrapper, ItemImg, ItemContent, CartCardAmountBtn, DelereItemBtn } from './CartCard.styled';
 
 export const CartCard = ({ data, reduceItemAmount, increaseItemAmount, removeItemFromCart }) => {
