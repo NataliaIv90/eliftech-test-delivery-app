@@ -25,14 +25,7 @@ const formFieldsData = [
 ]
 
 export const CartForm = ({ formValues, setFormValues }) => {
-  // const [formValues, setFormValues] = useState(
-  //   {
-  //     'name': '',
-  //     'email': '',
-  //     'phone': '',
-  //     'adress': '',
-  //   }
-  // );
+
   return (
     <CartFormWrapper>
       <Typography type='h1' variant='h4' align='center' >Delivery info</Typography>
@@ -52,5 +45,5 @@ export const CartForm = ({ formValues, setFormValues }) => {
         </FormItem>
       ))}
     </CartFormWrapper>
-  )
+  );
 }
