@@ -4,8 +4,36 @@ import { CardsWrapper } from "./Cards.styled";
 import { CartCard } from "../cartCard/CartCard";
 
 export const Cards = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
   const cartKeys = Object.keys(cart);
+
+  const reduceItemsAmount = (key) => {
+    if (cart[key].amount > 0) {
+      setCart({
+        ...cart,
+        [key]: {
+          ...cart[key],
+          amount: cart[key].amount - 1
+        }
+      });
+    }
+  };
+
+  const increaseItemsAmount = (key) => {
+    setCart({
+      ...cart,
+      [key]: {
+        ...cart[key],
+        amount: cart[key].amount + 1
+      }
+    });
+  };
+
+  const removeItemFromCart = (key) => {
+    const updatedCart = { ...cart };
+    delete updatedCart[key];
+    setCart(updatedCart);
+  };
 
   if (cartKeys.length === 0) {
     return <CardsWrapper>There are no items in the cart</CardsWrapper>
@@ -13,7 +41,13 @@ export const Cards = () => {
 
   return (
     <CardsWrapper>
-      {cartKeys.map((el) => <CartCard data={cart[el]} key={el} />)}
+      {cartKeys.map((el) => <CartCard
+        data={cart[el]}
+        key={el}
+        reduceItemAmount={() => reduceItemsAmount(el)}
+        increaseItemAmount={() => increaseItemsAmount(el)}
+        removeItemFromCart={() => removeItemFromCart(el)}
+      />)}
     </CardsWrapper>
   )
 }

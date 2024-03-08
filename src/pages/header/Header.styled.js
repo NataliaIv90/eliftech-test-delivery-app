@@ -17,4 +17,8 @@ export const HeaderBtn = styled(Button)(({ theme, underlined }) => ({
   textDecoration: underlined === 1 ? 'underline' : 'none',
   textTransform: 'capitalize',
   fontSize: '1.1rem',
-}))
+
+  '&:hover': {
+    textDecoration: 'underline',
+  }
+}));
